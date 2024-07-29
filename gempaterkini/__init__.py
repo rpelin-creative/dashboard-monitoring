@@ -41,6 +41,7 @@ def ekstraksi_data():
         bt = None
         lokasi = None
         dirasakan = None
+        selengkapnya = None
 
         for res in result:
             if i == 1:
@@ -55,6 +56,8 @@ def ekstraksi_data():
                 lokasi = res.text
             elif i == 5:
                 dirasakan = res.text
+            elif i == 6:
+                selengkapnya = res.text # uji coba ambil data ke 6
             i = i+1
 
 
@@ -66,6 +69,7 @@ def ekstraksi_data():
         hasil['koordinat'] = {'ls' : ls, 'bt' : bt}
         hasil['lokasi'] = lokasi
         hasil['dirasakan'] = dirasakan
+        hasil['selengkapnya'] = selengkapnya # uji coba ambil data ke 6
         return hasil
     else:
         return None
@@ -84,3 +88,4 @@ def tampilkan_data(result):
     print(f"Koordinat {result['koordinat']['ls']}, {result['koordinat']['bt']}")
     print(f"Lokasi {result['lokasi']}")
     print(f"Dirasakan {result['dirasakan']}")
+    print(f"Selengkapnya {result['selengkapnya']}")
